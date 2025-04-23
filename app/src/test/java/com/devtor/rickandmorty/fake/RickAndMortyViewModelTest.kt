@@ -14,7 +14,7 @@ class RickAndMortyViewModelTest {
                 rickAndMortyRepository = FakeRickAndMortyRepository()
             )
             assertEquals(
-                RickAndMortyUiState.Success(FakeDataSource.data),
+                RickAndMortyUiState.Success("Success: ${FakeDataSource.data.size} RickAndMorty photos retrieved"),
                 rickAndMortyViewModel.rickAndMortyUiState
                 )
 
