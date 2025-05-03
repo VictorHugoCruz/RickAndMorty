@@ -6,6 +6,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.devtor.rickandmorty.ui.components.TopAppBar
 import com.devtor.rickandmorty.ui.screens.HomeScreen
 import com.devtor.rickandmorty.ui.screens.RickAndMortyViewModel
 
@@ -13,7 +14,10 @@ import com.devtor.rickandmorty.ui.screens.RickAndMortyViewModel
 @Composable
 fun RickAndMortyApp(modifier: Modifier = Modifier) {
     Scaffold(
-        modifier = modifier
+        modifier = modifier,
+        topBar = {
+            TopAppBar()
+        }
     ) {
         val rickAndMortyViewModel: RickAndMortyViewModel = viewModel(
             factory = RickAndMortyViewModel.Factory

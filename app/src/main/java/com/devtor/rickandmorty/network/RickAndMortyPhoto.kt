@@ -1,6 +1,5 @@
 package com.devtor.rickandmorty.network
 
-import com.devtor.rickandmorty.network.dto.Location
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
