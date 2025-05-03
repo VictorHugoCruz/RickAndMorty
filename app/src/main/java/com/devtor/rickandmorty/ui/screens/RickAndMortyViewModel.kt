@@ -14,13 +14,11 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.devtor.rickandmorty.RickAndMortyApplication
 import com.devtor.rickandmorty.data.RickAndMortyRepository
-import com.devtor.rickandmorty.network.CharacterResponse
 import kotlinx.coroutines.launch
 import java.io.IOException
 
 sealed interface RickAndMortyUiState {
     data class Success(
-        val photos: List<CharacterResponse>
     ) : RickAndMortyUiState
 
     object Error : RickAndMortyUiState
@@ -45,7 +43,6 @@ class RickAndMortyViewModel(
                 val listResult = rickAndMortyRepository.getRickAndMortyPhotos()
 
                 rickAndMortyUiState = RickAndMortyUiState.Success(
-                    photos = listResult
                 )
             } catch (e: IOException) {
                 rickAndMortyUiState = RickAndMortyUiState.Error
